@@ -78,7 +78,7 @@
 
         <div class="row mt-5">
           <div class="col">
-            <h6>Bildungspolitik <small class="text-primary">Die Stärke der Schweiz sind ihre wissbegierigen Leute</small></h6>
+            <h6 class="text-muted">Bildungspolitik <small class="text-primary">Die Stärke der Schweiz sind ihre wissbegierigen Leute</small></h6>
             <p>
               Wir sind wirklichkeitsnah, neugierig, praktisch, präzise und haben die Fähigkeit, das Wünschenswerte zu wollen und das Machbare zu planen.
             </p>
@@ -90,7 +90,7 @@
 
         <div class="row mt-5">
           <div class="col">
-            <h6>Familienpolitik <small class="text-primary">Für eine erfolgreiche Schweiz braucht es starke Familien</small></h6>
+            <h6 class="text-muted">Familienpolitik <small class="text-primary">Für eine erfolgreiche Schweiz braucht es starke Familien</small></h6>
             <p>
               Die Gründung einer Familie darf nicht zu Armut führen. Gute Rahmenbedingungen für die Familien und den Mittelstand bilden einen Erfolgsfaktor für die Schweiz. Familien benötigen Geld, Zeit und Infrastrukturen. Mit der CVP-Volksinitiative „Für Ehe und Familie – gegen die Heiratsstrafe“, die voraussichtlich im Februar 2016 zur Abstimmung kommt, soll die Diskriminierung der Ehe gegenüber den anderen Lebensformen konsequent beseitigt werden. Die Vereinbarkeit von Beruf und Familie ist heute für viele junge Eltern von zentraler Bedeutung. Dem ist Rechnung zu tragen. Es braucht flächendeckende Angebote für die familienexterne Kinderbetreuung. Die traditionelle Familie darf dabei jedoch nicht benachteiligt werden. Die verschiedenen Familienformen sind heute Tatsache und sollen auch gelebt werden können. Auch die Väter sollen nach der Geburt ihres Kindes die Möglichkeit erhalten, ohne finanzielle Einbussen die Mütter zu unterstützen. Die Einführung eines zweiwöchigen Vaterschafsurlaubs, der von der EO kostenneutral bezahlt werden soll, ist vertretbar und kann finanziert werden. Auch soll unsere Gesellschaft wieder vermehrt ermuntert werden, sich im Sinne einer gelebten Hilfsbereitschaft gegenseitig zu unterstützen und von den gegenseitigen Erfahrungen und Möglichkeiten zu profitieren. Auch die moderne Gesellschaft braucht Solidarität und ehrenamtliches Engagement.
             </p>
@@ -99,7 +99,7 @@
 
         <div class="row mt-5">
           <div class="col">
-            <h6>Migrationspolitik <small class="text-primary">Humanität und rechtsstaatlichkeit sind gleichermassen bedeutend</small></h6>
+            <h6 class="text-muted">Migrationspolitik <small class="text-primary">Humanität und rechtsstaatlichkeit sind gleichermassen bedeutend</small></h6>
             <p>
               Deshalb heisst es: Bedrohten Menschen ist ohne Wenn und Aber Asyl zu gewähren. Kommt jemand zwar aus einer gewissen Perspektivlosigkeit, aber ohne Bedrohungssituation zu uns, gilt es klar zu machen, dass der richtige Weg einzig der Aufbau der Heimat ist. Auch das gehört zu einem humanitären Staat. Hier braucht es schnelle und dadurch faire Verfahren.
             </p>
@@ -111,7 +111,7 @@
 
         <div class="row mt-5">
           <div class="col">
-            <h6>Aussenpolitik <small class="text-primary">Der bilaterale Weg mit der EU ist nicht der einfachste, aber der erfolgreichste</small></h6>
+            <h6 class="text-muted">Aussenpolitik <small class="text-primary">Der bilaterale Weg mit der EU ist nicht der einfachste, aber der erfolgreichste</small></h6>
             <p>
               Deshalb ist er weiter zu gehen. Gleichzeitig ist dem anderen Weg, sprich dem Beitritt zur EU, eine Absage zu erteilen. Ich bin deshalb für einen Rückzug des Beitrittsgesuchs.
             </p>
@@ -177,7 +177,7 @@
 
         <div class="row mt-5">
           <div class="col">
-            <h6>Persönliche Eckdaten <small class="text-primary">Ich und andere über mich</small></h6>
+            <h6 class="text-muted">Persönliche Eckdaten <small class="text-primary">Ich und andere über mich</small></h6>
             <p>
               Durch meine kommunikative und wache Persönlichkeit, gehe ich jede neue Herausforderung mit grossen Schritten entgegen.
             </p>
@@ -206,7 +206,7 @@
 
         <div class="row mt-5">
           <div class="col">
-            <h6>Politische Mandate <small class="text-primary">Politischer Werdegang und Engagement</small></h6>
+            <h6 class="text-muted">Politische Mandate <small class="text-primary">Politischer Werdegang und Engagement</small></h6>
             <ul class="list-unstyled">
               <li>
                 <b class="text-muted text-monospace">
@@ -246,7 +246,7 @@
 
         <div class="row mt-5">
           <div class="col">
-            <h6>Beruflicher Werdegang <small class="text-primary">Ausbildung und Befuf</small></h6>
+            <h6 class="text-muted">Beruflicher Werdegang <small class="text-primary">Ausbildung und Befuf</small></h6>
             <ul class="list-unstyled">
               <li>
                 <b class="text-muted text-monospace">
@@ -278,7 +278,7 @@
 
         <div class="row mt-5">
           <div class="col">
-            <h6>Ehrenamtliche Tätigkeiten <small class="text-primary">ausserberufliche Engagements</small></h6>
+            <h6 class="text-muted">Ehrenamtliche Tätigkeiten <small class="text-primary">ausserberufliche Engagements</small></h6>
             <p>
               Neben meinem Einsatz in verschiedenen Gemeinden des Bistums St.Gallen (Leiter Jugendbibelgruppe St. Gallen, Leiter Jugendbibelgruppe St. Gallen)
               trage ich duch mein Engagement in wieteren Oraganisationen zu deren Erfolg bei.
@@ -362,7 +362,7 @@
       </div>
     </b-modal>
 
-    <b-modal id="legal" title="Datenschutz" hide-footer>
+    <b-modal id="legal" title="Datenschutz" hide-footer size="lg">
       <div class="row">
         <div class="col">
           <p>
