@@ -30,7 +30,7 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ['~plugins/vue-awesome.js'],
+  plugins: ['~plugins/vue-awesome.js', '~plugins/vue-moment.js'],
 
   /*
   ** Nuxt.js modules

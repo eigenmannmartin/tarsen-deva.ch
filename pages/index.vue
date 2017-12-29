@@ -139,11 +139,14 @@
         <div class="row mt-2">
           <div class="col">
             <b-table
+            responsive="sm"
+            stacked="sm"
+            :sort-compare="sortCompare"
             :hover="true"
             :items="items"
             :fields="fields">
             <template slot="date" scope="data">
-              {{ new Date(data.item.date).toLocaleDateString()}}
+              {{ [ data.item.date, ["DD.MM.YY", "DD.MM.YYYY"] ] | moment("Do MMMM YYYY") }}
             </template>
             </b-table>
           </div>
@@ -399,11 +402,31 @@
 </template>
 
 <script>
+import moment from 'moment'
+
 export default {
   components: {},
+  methods: {
+    sortCompare(a, b, key) {
+      if (typeof a[key] === 'number' && typeof b[key] === 'number') {
+        // If both compared fields are native numbers
+        return a[key] < b[key] ? -1 : a[key] > b[key] ? 1 : 0
+      }
+
+      const da = moment(a[key], 'DD.MM.YYYY')
+      const db = moment(b[key], 'DD.MM.YYYY')
+      if (da.isValid() && db.isValid()) {
+        return da < db ? -1 : da > db ? 1 : 0
+      }
+
+      // Stringify the field data and use String.localeCompare
+      return toString(a[key]).localeCompare(toString(b[key]), undefined, {
+        numeric: true
+      })
+    }
+  },
   data() {
     return {
-      // Note 'isActive' is left out and will not appear in the rendered table
       fields: {
         date: {
           label: 'Datum',
@@ -420,12 +443,12 @@ export default {
       },
       items: [
         {
-          date: new Date('2018-01-5').getTime(),
+          date: '05.01.2018',
           name: 'Neujahresbegrüssung CVP Stadt St. Gallen',
           location: 'St.Gallen'
         },
         {
-          date: new Date('2018-04-14').getTime(),
+          date: '14.04.2018',
           name: '1. Delegiertenversammlung JCVP Schweiz',
           location: 'St.Gallen'
         }
