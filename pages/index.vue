@@ -19,32 +19,32 @@
       </div>
     </section>
 
-    <b-navbar sticky toggleable="md" type="light" variant="primary">
+    <b-navbar id="navbar" sticky toggleable="md" type="light" variant="primary" v-b-scrollspy:app>
       <div class="container">
         <b-navbar-nav class="w-100">
           <div class="row w-100">
             <div class="col text-center">
-              <b-nav-item href="#motivation">
-                <span class="text-white">
-                  <icon name="heartbeat" class="icon"></icon>
-                  Motiviation
-                </span>
+              <b-nav-item active-class="active" href="#motivation" v-scroll-to="{ el: '#motivation' }">
+                <div class="text-white item">
+                  <icon name="heartbeat" class="icon"/><br />
+                  <span>Motiviation</span>
+                </div>
               </b-nav-item>
             </div>
             <div class="col text-center">
-              <b-nav-item href="#engagement">
-                <span class="text-white">
-                  <icon name="globe" class="icon"></icon>
-                  Agenda
-                </span>
+              <b-nav-item active-class="active" href="#engagement" v-scroll-to="{ el: '#engagement' }">
+                <div class="text-white item">
+                  <icon name="globe" class="icon"/><br />
+                  <span>Agenda</span>
+                </div>
               </b-nav-item>
             </div>
             <div class="col text-center">
-              <b-nav-item href="#profile">
-                <span class="text-white">
-                  <icon name="user" class="icon"></icon>
-                  Profil
-                </span>
+              <b-nav-item active-class="active" href="#profile" v-scroll-to="{ el: '#profile' }">
+                <div class="text-white item">
+                  <icon name="user" class="icon"/><br />
+                  <span>Profil</span>
+                </div>
               </b-nav-item>
             </div>
           </div>
@@ -52,7 +52,7 @@
       </div>
     </b-navbar>
 
-    <section id="motivation" class="section pt-5">
+    <section id="motivation" class="section">
       <div class="container">
         <div class="row">
           <div class="col">
@@ -124,7 +124,7 @@
 
       </div>
     </section>
-    <section id="engagement" class="section pt-5">
+    <section id="engagement" class="section">
       <div class="container">
         <div class="row">
           <div class="col">
@@ -153,7 +153,7 @@
         </div>
       </div>
     </section>
-    <section id="profile" class="section pt-5">
+    <section id="profile" class="section">
       <div class="container">
         <div class="row">
           <div class="col">
@@ -460,7 +460,7 @@ export default {
 
 <style lang="scss">
 $label-height: 60px;
-$bar-height: 56px;
+$bar-height: 66px;
 
 #header {
   height: calc(100vh - #{$bar-height} - #{$label-height});
@@ -468,6 +468,19 @@ $bar-height: 56px;
 
 #label {
   height: $label-height;
+}
+
+#navbar {
+  height: $bar-height;
+}
+
+.item {
+  border-bottom: 6px solid transparent;
+  transition: border-bottom-color 0.5s;
+}
+
+.active > .item {
+  border-bottom-color: white;
 }
 
 .cvp-logo {
@@ -490,6 +503,7 @@ $bar-height: 56px;
 }
 
 .section {
+  padding-top: $bar-height;
 }
 
 .icon {
