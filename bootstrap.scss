@@ -1,2 +1,6 @@
 @import '/theme';
 @import 'node_modules/bootstrap/scss/bootstrap';
+
+.text-monospace {
+  font-family: monospace;
+}
