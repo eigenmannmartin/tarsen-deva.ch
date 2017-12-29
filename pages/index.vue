@@ -131,6 +131,23 @@
             <h1 class="text-primary">Agenda <small class="text-muted">Engagement</small></h1>
           </div>
         </div>
+        <div class="row mt-5">
+          <div class="col">
+            <p>Alle meine Kommenden Termine und Veranstaltungen auc einen Blick.</p>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col">
+            <b-table
+            :hover="true"
+            :items="items"
+            :fields="fields">
+            <template slot="date" scope="data">
+              {{ new Date(data.item.date).toLocaleDateString()}}
+            </template>
+            </b-table>
+          </div>
+        </div>
       </div>
     </section>
     <section id="profile" class="section pt-5">
@@ -297,7 +314,38 @@
 
 <script>
 export default {
-  components: {}
+  components: {},
+  data() {
+    return {
+      // Note 'isActive' is left out and will not appear in the rendered table
+      fields: {
+        date: {
+          label: 'Datum',
+          sortable: true
+        },
+        name: {
+          label: 'Veranstaltung',
+          sortable: false
+        },
+        location: {
+          label: 'Ort',
+          sortable: true
+        }
+      },
+      items: [
+        {
+          date: new Date('2018-01-5').getTime(),
+          name: 'Neujahresbegrüssung CVP Stadt St. Gallen',
+          location: 'St.Gallen'
+        },
+        {
+          date: new Date('2018-04-14').getTime(),
+          name: '1. Delegiertenversammlung JCVP Schweiz',
+          location: 'St.Gallen'
+        }
+      ]
+    }
+  }
 }
 </script>
 
@@ -333,7 +381,6 @@ $bar-height: 56px;
 }
 
 .section {
-  min-height: 100vh;
 }
 
 .icon {
