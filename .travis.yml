@@ -6,3 +6,4 @@ deploy:
   provider: surge
   project: ./dist/
   domain: tarsen-deva.surge.sh
+  skip_cleanup: true
