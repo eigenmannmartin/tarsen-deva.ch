@@ -5,5 +5,5 @@ script: yarn generate
 deploy:
   provider: surge
   project: ./dist/
-  domain: tarsen-deva.surge.sh
+  domain: tarsen-deva.ch
   skip_cleanup: true
