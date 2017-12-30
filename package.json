@@ -17,10 +17,13 @@
     "bootstrap": "^4.0.0-beta.2",
     "bootstrap-vue": "^1.0.2",
     "css-loader": "^0.28.7",
+    "gray-matter": "^3.1.1",
     "node-sass": "^4.7.2",
     "nuxt": "^1.0.0-rc11",
+    "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.6",
     "vue-awesome": "^2.3.4",
+    "vue-markdown": "^2.2.4",
     "vue-moment": "^3.1.0",
     "vue-scrollto": "^2.8.0",
     "vue-style-loader": "^3.0.3"

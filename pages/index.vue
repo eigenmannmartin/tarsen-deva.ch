@@ -23,27 +23,11 @@
       <div class="container">
         <b-navbar-nav class="w-100">
           <div class="row w-100">
-            <div class="col text-center">
-              <b-nav-item active-class="active" href="#motivation" v-scroll-to="{ el: '#motivation' }">
+            <div v-for="content in contents" class="col text-center">
+              <b-nav-item active-class="active" :href="`#${content.subtitle}`" v-scroll-to="{ el: `#${content.subtitle}` }">
                 <div class="text-white item">
-                  <icon name="heartbeat" class="icon"/><br />
-                  <span>Motiviation</span>
-                </div>
-              </b-nav-item>
-            </div>
-            <div class="col text-center">
-              <b-nav-item active-class="active" href="#engagement" v-scroll-to="{ el: '#engagement' }">
-                <div class="text-white item">
-                  <icon name="globe" class="icon"/><br />
-                  <span>Agenda</span>
-                </div>
-              </b-nav-item>
-            </div>
-            <div class="col text-center">
-              <b-nav-item active-class="active" href="#profile" v-scroll-to="{ el: '#profile' }">
-                <div class="text-white item">
-                  <icon name="user" class="icon"/><br />
-                  <span>Profil</span>
+                  <icon :name="content.icon" class="icon"/><br />
+                  <span>{{ content.subtitle }}</span>
                 </div>
               </b-nav-item>
             </div>
@@ -52,78 +36,95 @@
       </div>
     </b-navbar>
 
-    <section id="motivation" class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <h1 class="text-primary">Politik <small class="text-muted">Motivation</small></h1>
-          </div>
-        </div>
+    <template v-for="content in contents">
+      <template v-if="content.type==='TEXT'">
+        <section :id="content.subtitle" class="section">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <h1 class="text-primary">{{ content.title }} <small class="text-muted">{{ content.subtitle }}</small></h1>
+              </div>
+            </div>
 
-        <div class="row">
-          <div class="col">
-            <p>
-              Der Mensch steht für mich im Mittelpunkt. Mein grösstes Anliegen ist es, die Bedürfnisse der Schweizer Bevölkerung so gut wie möglich zu erfüllen. Dafür setze ich mich mit Kopf, Herz und vollem Tatendrang entschlossen ein.
-            </p>
-            <p>
-              Seit 2011 bin ich Mitglieder der CVP Schweiz sowie der JCVP Kanton SG. Innerhalb unserer Partei habe bereits sämtliche Vorstandsaufgaben ausgeübt wie Vizepräsident der Regionalpartei JCVP St. Gallen – Gossau - Rorschach, Delegierter JCVP Kanton SG oder auch Stellvertretungsfunktionen von internationalen Kongressen vom Internationalen Sekretär der JCVP Schweiz.
-            </p>
+            <template v-for="section, key in content.sections">
+              <div class="row">
+                <div class="col">
+                  <h6 v-if="section.data.title" class="text-muted mt-5">
+                    {{ section.data.title }}
+                    <small v-if="section.data.subtitle" class="text-primary">
+                      {{ section.data.subtitle }}
+                    </small>
+                  </h6>
+                  <vue-markdown typographer :postrender="postrender">{{ section.content }}</vue-markdown>
+                </div>
+              </div>
+            </template>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-12 offset-md-3 col-md-6 col-xl-4 offset-xl-4">
-            <img class="w-100" src="~/assets/smartspider.png" />
+        </section>
+      </template>
+
+      <template v-if="content.type==='AGENDA'">
+        <section :id="content.subtitle" class="section">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <h1 class="text-primary">{{ content.title }} <small class="text-muted">{{ content.subtitle }}</small></h1>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col">
+                <p>Alle meine Kommenden Termine und Veranstaltungen auc einen Blick.</p>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col">
+                <b-table
+                responsive="sm"
+                stacked="sm"
+                :sort-compare="sortCompare"
+                :hover="false"
+                :items="content.entries.map(e => e.data)"
+                :fields="fields">
+                  <template slot="date" scope="data">
+                    {{ [ data.item.date, ["DD.MM.YY", "DD.MM.YYYY"] ] | moment("Do MMMM YYYY") }}
+                  </template>
+
+                  <template slot="show_details" scope="row">
+                    <b-button
+                      size="sm"
+                      variant="light"
+                      v-b-tooltip.hover.top="row.detailsShowing ? 'Details verstecken' : 'Details anzeigen'"
+                      @click.stop="row.toggleDetails">
+                      <template v-if="row.detailsShowing">
+                        <icon name="chevron-up" />
+                      </template>
+                      <template v-else>
+                        <icon name="chevron-down" />
+                      </template>
+                    </b-button>
+                  </template>
+
+                  <template slot="row-details" scope="row">
+                    <b-card>
+                      <b-row class="mb-2">
+                        <b-col sm="3" class="text-sm-right"><b>Ort:</b></b-col>
+                        <b-col>{{ row.item.location }}</b-col>
+                      </b-row>
+                      <b-row class="mb-2">
+                        <b-col sm="3" class="text-sm-right"><b>Zeit:</b></b-col>
+                        <b-col>{{ row.item.time }}</b-col>
+                      </b-row>
+                    </b-card>
+                  </template>
+                </b-table>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
+      </template>
+    </template>
 
-        <div class="row mt-5">
-          <div class="col">
-            <h6 class="text-muted">Bildungspolitik <small class="text-primary">Die Stärke der Schweiz sind ihre wissbegierigen Leute</small></h6>
-            <p>
-              Wir sind wirklichkeitsnah, neugierig, praktisch, präzise und haben die Fähigkeit, das Wünschenswerte zu wollen und das Machbare zu planen.
-            </p>
-            <p>
-              Lassen Sie mich es unzweideutig und glasklar sagen: Bildung, Forschung und Innovation sind unsere wichtigsten, ja einzigen Rohstoffe von globaler Bedeutung. Geschliffen werden diese Talente durch gute Schulen, Fachhochschulen und Universitäten. Wettbewerbsfähig werden sie durch grenzüberschreitendes Messen mit Konkurrenten und die Möglichkeit zum Austausch. Darum stehe ich unmissverständlich ein für qualitativ hochstehende Aus- und Weiterbildung und für Chancengleichheit im internationalen Wettbewerb. Leistungsbereitschaft und Ehrgeiz sind unsere Stärken!
-            </p>
-          </div>
-        </div>
-
-        <div class="row mt-5">
-          <div class="col">
-            <h6 class="text-muted">Familienpolitik <small class="text-primary">Für eine erfolgreiche Schweiz braucht es starke Familien</small></h6>
-            <p>
-              Die Gründung einer Familie darf nicht zu Armut führen. Gute Rahmenbedingungen für die Familien und den Mittelstand bilden einen Erfolgsfaktor für die Schweiz. Familien benötigen Geld, Zeit und Infrastrukturen. Mit der CVP-Volksinitiative „Für Ehe und Familie – gegen die Heiratsstrafe“, die voraussichtlich im Februar 2016 zur Abstimmung kommt, soll die Diskriminierung der Ehe gegenüber den anderen Lebensformen konsequent beseitigt werden. Die Vereinbarkeit von Beruf und Familie ist heute für viele junge Eltern von zentraler Bedeutung. Dem ist Rechnung zu tragen. Es braucht flächendeckende Angebote für die familienexterne Kinderbetreuung. Die traditionelle Familie darf dabei jedoch nicht benachteiligt werden. Die verschiedenen Familienformen sind heute Tatsache und sollen auch gelebt werden können. Auch die Väter sollen nach der Geburt ihres Kindes die Möglichkeit erhalten, ohne finanzielle Einbussen die Mütter zu unterstützen. Die Einführung eines zweiwöchigen Vaterschafsurlaubs, der von der EO kostenneutral bezahlt werden soll, ist vertretbar und kann finanziert werden. Auch soll unsere Gesellschaft wieder vermehrt ermuntert werden, sich im Sinne einer gelebten Hilfsbereitschaft gegenseitig zu unterstützen und von den gegenseitigen Erfahrungen und Möglichkeiten zu profitieren. Auch die moderne Gesellschaft braucht Solidarität und ehrenamtliches Engagement.
-            </p>
-          </div>
-        </div>
-
-        <div class="row mt-5">
-          <div class="col">
-            <h6 class="text-muted">Migrationspolitik <small class="text-primary">Humanität und rechtsstaatlichkeit sind gleichermassen bedeutend</small></h6>
-            <p>
-              Deshalb heisst es: Bedrohten Menschen ist ohne Wenn und Aber Asyl zu gewähren. Kommt jemand zwar aus einer gewissen Perspektivlosigkeit, aber ohne Bedrohungssituation zu uns, gilt es klar zu machen, dass der richtige Weg einzig der Aufbau der Heimat ist. Auch das gehört zu einem humanitären Staat. Hier braucht es schnelle und dadurch faire Verfahren.
-            </p>
-            <p>
-              Der Grossteil der Menschen, die heute in die Schweiz kommen, sind nicht Flüchtlinge aus Kriegsgebieten, sondern Arbeiter aus EU-Staaten, mit denen wir über ein Freizügigkeitsabkommen verfügen. Die Wirtschaft ist auf diese Arbeitskräfte angewiesen. Gleichwohl gilt es, darauf zu achten, dass das Bevölkerungswachstum durch Zuwanderung nur so hoch ist, dass unsere Infrastrukturen und unsere Ressourcen nicht darunter leiden.
-            </p>
-          </div>
-        </div>
-
-        <div class="row mt-5">
-          <div class="col">
-            <h6 class="text-muted">Aussenpolitik <small class="text-primary">Der bilaterale Weg mit der EU ist nicht der einfachste, aber der erfolgreichste</small></h6>
-            <p>
-              Deshalb ist er weiter zu gehen. Gleichzeitig ist dem anderen Weg, sprich dem Beitritt zur EU, eine Absage zu erteilen. Ich bin deshalb für einen Rückzug des Beitrittsgesuchs.
-            </p>
-            <p>
-              Die humanitäre Tradition der Schweiz soll auch in Zukunft eine weltweite Visitenkarte sein. Deshalb stehe ich ein für eine transparente Entwicklungshilfe und dafür, dass die guten Dienste der Schweiz auch in Zukunft dem Frieden in der Welt nützen.
-            </p>
-          </div>
-        </div>
-
-
-      </div>
-    </section>
+    <!--
     <section id="engagement" class="section">
       <div class="container">
         <div class="row">
@@ -150,7 +151,6 @@
               </template>
 
               <template slot="show_details" scope="row">
-                <!-- we use @click.stop here to prevent emitting of a 'row-clicked' event  -->
                 <b-button
                   size="sm"
                   variant="light"
@@ -182,6 +182,8 @@
         </div>
       </div>
     </section>
+
+
     <section id="profile" class="section">
       <div class="container">
         <div class="row">
@@ -335,7 +337,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <footer class="bg-primary mt-5">
       <div class="container text-white">
@@ -430,11 +432,18 @@
 </template>
 
 <script>
+import VueMarkdown from 'vue-markdown'
 import moment from 'moment'
+import contents from '~/content'
 
 export default {
-  components: {},
+  components: {
+    VueMarkdown
+  },
   methods: {
+    postrender(html) {
+      return html
+    },
     sortCompare(a, b, key) {
       if (typeof a[key] === 'number' && typeof b[key] === 'number') {
         // If both compared fields are native numbers
@@ -455,6 +464,7 @@ export default {
   },
   data() {
     return {
+      contents,
       fields: {
         date: {
           label: 'Datum',

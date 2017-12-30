@@ -59,6 +59,11 @@ module.exports = {
         ]
       }
 
+      config.module.rules.push({
+        test: /\.md$/,
+        use: 'raw-loader'
+      })
+
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
