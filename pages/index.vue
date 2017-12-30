@@ -145,9 +145,38 @@
             :hover="true"
             :items="items"
             :fields="fields">
-            <template slot="date" scope="data">
-              {{ [ data.item.date, ["DD.MM.YY", "DD.MM.YYYY"] ] | moment("Do MMMM YYYY") }}
-            </template>
+              <template slot="date" scope="data">
+                {{ [ data.item.date, ["DD.MM.YY", "DD.MM.YYYY"] ] | moment("Do MMMM YYYY") }}
+              </template>
+
+              <template slot="show_details" scope="row">
+                <!-- we use @click.stop here to prevent emitting of a 'row-clicked' event  -->
+                <b-button
+                  size="sm"
+                  variant="light"
+                  v-b-tooltip.hover.top="row.detailsShowing ? 'Details verstecken' : 'Details anzeigen'"
+                  @click.stop="row.toggleDetails">
+                  <template v-if="row.detailsShowing">
+                    <icon name="chevron-up" />
+                  </template>
+                  <template v-else>
+                    <icon name="chevron-down" />
+                  </template>
+                </b-button>
+              </template>
+
+              <template slot="row-details" scope="row">
+                <b-card>
+                  <b-row class="mb-2">
+                    <b-col sm="3" class="text-sm-right"><b>Ort:</b></b-col>
+                    <b-col>{{ row.item.location }}</b-col>
+                  </b-row>
+                  <b-row class="mb-2">
+                    <b-col sm="3" class="text-sm-right"><b>Zeit:</b></b-col>
+                    <b-col>{{ row.item.time }}</b-col>
+                  </b-row>
+                </b-card>
+              </template>
             </b-table>
           </div>
         </div>
@@ -253,7 +282,7 @@
             <ul class="list-unstyled">
               <li>
                 <b class="text-muted text-monospace">
-                  2006 – 2010
+                  2007 – 2010
                 </b>
                 <span class="ml-3">
                   Kaufmännische Lehre (Volkswirtschaftsdepartement Kanton SG)
@@ -261,7 +290,7 @@
               </li>
               <li>
                 <b class="text-muted text-monospace">
-                  2010 – 2013
+                  2011 – 2012
                 </b>
                 <span class="ml-3">
                   Abschluss Sozialversicherungsrecht mit Schwerpunkt ALV + EL
@@ -283,7 +312,7 @@
           <div class="col">
             <h6 class="text-muted">Ehrenamtliche Tätigkeiten <small class="text-primary">ausserberufliche Engagements</small></h6>
             <p>
-              Neben meinem Einsatz in verschiedenen Gemeinden des Bistums St.Gallen (Leiter Jugendbibelgruppe St. Gallen, Leiter Jugendbibelgruppe St. Gallen)
+              Neben meinem Einsatz in verschiedenen Gemeinden des Bistums St.Gallen (Leiter Jugendbibelgruppe St. Gallen, Oberministrant, Lektor, Klausgruppe)
               trage ich duch mein Engagement in wieteren Oraganisationen zu deren Erfolg bei.
             </p>
             <ul class="list-unstyled">
@@ -314,16 +343,13 @@
           <div class="col">
             <div class="row">
               <div class="col">
-                <b>Latharsan Devasakayam</b><br />
+                  <b>Latharsan Devasakayam</b><br />
                 <div class="mt-2">
-                  <a href="mailto:me@tarsen-deva.ch" v-b-popover.hover.top="'Email senden'" class="text-white">
+                  <a href="mailto:latharsandevasakayam@livenet.ch" v-b-tooltip.hover.top="'Email senden'" class="text-white">
                     <icon name="envelope" />
                   </a>
-                  <a href="facebook.com" v-b-popover.hover.top="'Facebook ansehen'"class="text-white ml-3">
+                  <a href="https://www.facebook.com/tarsen.deva/" v-b-tooltip.hover.top="'Facebook ansehen'"class="text-white ml-3">
                     <icon name="facebook-official" />
-                  </a>
-                  <a href="linkedin.com" v-b-popover.hover.top="'Linkedin ansehen'"class="text-white ml-3">
-                    <icon name="linkedin-square" />
                   </a>
                 </div>
               </div>
@@ -353,7 +379,7 @@
           <p>
             <b class="text-muted">Verantwortlich für den Inhalt dieser Seite:</b><br />
             Latharsan Devasakayam<br />
-            STRASSE<br />
+            Falkensteinstrasse 90a<br />
             CH-9000 St.Gallen<br />
           </p>
           <p class="mt-3">
@@ -436,23 +462,25 @@ export default {
           label: 'Veranstaltung',
           sortable: false
         },
-        location: {
-          label: 'Ort',
-          sortable: true
-        }
+        show_details: { label: ' ' }
       },
       items: [
         {
           date: '05.01.2018',
           name: 'Neujahresbegrüssung CVP Stadt St. Gallen',
-          location: 'St.Gallen'
+          location: 'Adlerhof St.Gallen',
+          time: '19:00'
         },
         {
           date: '14.04.2018',
           name: '1. Delegiertenversammlung JCVP Schweiz',
-          location: 'St.Gallen'
+          location: 'St.Gallen',
+          time: '14:00'
         }
       ]
+
+      // Stadtparlament 2020
+      // Kantonsraat 2020
     }
   }
 }
