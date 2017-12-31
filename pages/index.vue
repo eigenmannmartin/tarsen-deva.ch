@@ -495,6 +495,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../bootstrap.scss';
+
 $label-height: 60px;
 $bar-height: 66px;
 
