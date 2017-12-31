@@ -55,7 +55,7 @@
                       {{ section.data.subtitle }}
                     </small>
                   </h6>
-                  <vue-markdown typographer :postrender="postrender">{{ section.content }}</vue-markdown>
+                  <div v-html="section.content"/>
                 </div>
               </div>
             </template>
@@ -432,14 +432,10 @@
 </template>
 
 <script>
-import VueMarkdown from 'vue-markdown'
 import moment from 'moment'
 import contents from '~/content'
 
 export default {
-  components: {
-    VueMarkdown
-  },
   methods: {
     postrender(html) {
       return html

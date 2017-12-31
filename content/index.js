@@ -1,4 +1,5 @@
 import matter from 'gray-matter'
+import marked from 'marked'
 
 export default [
   {
@@ -12,7 +13,9 @@ export default [
       require('./politik/03-familienpolitik.md'),
       require('./politik/04-migrationspolitik.md'),
       require('./politik/05-aussenpolitik.md')
-    ].map(matter)
+    ]
+      .map(matter)
+      .map(e => ({ ...e, content: marked(e.content) }))
   },
   {
     title: 'Agenda',
@@ -35,6 +38,8 @@ export default [
       require('./profile/03-politische-mandate.md'),
       require('./profile/04-beruflicher-werdegang.md'),
       require('./profile/05-ehrenamtliche-taetigkeiten.md')
-    ].map(matter)
+    ]
+      .map(matter)
+      .map(e => ({ ...e, content: marked(e.content) }))
   }
 ]
