@@ -1,9 +1,14 @@
 <template>
   <div>
+    <div>
+      <a href="https://www.cvp.ch">
+        <img src="~static/logo-cvp.svg" class="cvp-logo"/>
+      </a>
+    </div>
     <section id="label">
       <div class="container my-2">
         <div>
-          <img class="cvp-logo" src="~/static/logo-csp.jpg"/>
+          <img class="csp-logo" src="~/static/logo-csp.jpg"/>
         </div>
         <div class="logo-text">
           <h1 class="d-inline">Tarsen Deva</h1><br />
@@ -11,8 +16,9 @@
         </div>
       </div>
     </section>
-    <section id="header">
 
+
+    <section id="header">
       <particles class="particles" />
       <div class="container py-2">
         <div class="row h-100">
@@ -347,14 +353,15 @@ $bar-height: 66px;
   border-bottom-color: white;
 }
 
-.cvp-logo {
-  height: calc(#{$label-height} - 5px);
+.csp-logo {
+  padding-top: 3px;
+  height: 30px;
   float: left;
 }
 
 .logo-text {
   height: $label-height;
-  padding-left: 80px;
+  padding-left: 40px;
 
   h1 {
     line-height: 2rem;
@@ -380,6 +387,14 @@ $bar-height: 66px;
   height: calc(100vh - #{$bar-height} - #{$label-height});
   max-height: $header-max-height;
   position: absolute;
+}
+
+.cvp-logo {
+  height: 50px;
+  position: fixed;
+  z-index: 2000;
+  top: 8px;
+  right: 8px;
 }
 
 .header-item {
