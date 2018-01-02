@@ -27,10 +27,10 @@
           </div>
           <div class="col-12 col-md-6">
             <div class="h-100">
-              <div class="header-item" style="height: 33%">
+              <div class="header-item">
                 <div class="text text-muted">
                   <div class="wrapper">
-                    rofessionell <br />
+                    professionell <br />
                     <span class="text-primary">und</span> <br />
                     qualifiziert
                   </div>
@@ -39,7 +39,7 @@
                   <h4>vielfältig</h4>
                 </div>
               </div>
-              <div class="header-item" style="height: 33%">
+              <div class="header-item">
                 <div class="text text-muted">
                   <div class="wrapper">
                     loyal <br />
@@ -51,7 +51,7 @@
                   <h4>persönlich</h4>
                 </div>
               </div>
-              <div class="header-item" style="height: 33%">
+              <div class="header-item">
                 <div class="text text-muted">
                   <div class="wrapper">
                     vernetzt <br />
@@ -394,6 +394,9 @@ $bar-height: 66px;
 }
 
 .header-item {
+  height: calc(calc(100vh - #{$bar-height} - #{$label-height}) / 4);
+  padding: 0;
+  margin: 0;
   display: flex;
   align-items: center;
 
@@ -416,11 +419,11 @@ $bar-height: 66px;
     transition: all 0.9s;
     font-size: 1.2rem;
     height: 0;
-    overflow: hidden;
     opacity: 0;
+    overflow: hidden;
 
     .wrapper {
-      width: 10vw;
+      width: 20vw;
     }
   }
 
@@ -432,7 +435,7 @@ $bar-height: 66px;
 
     .text {
       width: calc(100% - ( 150px + 30px );
-      height: 80px;
+      height: 100px;
       opacity: 1;
     }
   }
