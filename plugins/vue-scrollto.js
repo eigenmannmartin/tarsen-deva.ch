@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueScrollto from 'vue-scrollto'
 
 Vue.use(VueScrollto, {
-  container: '#app',
+  container: 'body',
   duration: 500,
   easing: 'ease',
   offset: 0,
