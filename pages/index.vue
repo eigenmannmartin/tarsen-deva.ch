@@ -123,7 +123,7 @@
             </div>
             <div class="row mt-5">
               <div class="col">
-                <p>Alle meine Kommenden Termine und Veranstaltungen auc einen Blick.</p>
+                <p>Alle meine Kommenden Termine und Veranstaltungen auf einen Blick.</p>
               </div>
             </div>
             <div class="row mt-2">
