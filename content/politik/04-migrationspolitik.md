@@ -1,6 +1,6 @@
 ---
 title: "Migrationspolitik"
-subtitle: "Humanität und rechtsstaatlichkeit sind gleichermassen bedeutend"
+subtitle: "Humanität und Rechtsstaatlichkeit sind gleichermassen bedeutend"
 ---
 
 Deshalb heisst es: Bedrohten Menschen ist ohne Wenn und Aber Asyl zu gewähren. Kommt jemand zwar aus einer gewissen Perspektivlosigkeit, aber ohne Bedrohungssituation zu uns, gilt es klar zu machen, dass der richtige Weg einzig der Aufbau der Heimat ist. Auch das gehört zu einem humanitären Staat. Hier braucht es schnelle und dadurch faire Verfahren.
