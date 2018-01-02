@@ -69,7 +69,7 @@
       </div>
     </section>
 
-    <b-navbar id="navbar" sticky toggleable="md" type="light" variant="primary" v-b-scrollspy:app>
+    <b-navbar id="navbar" sticky toggleable="md" type="light" variant="primary" v-b-scrollspy>
       <div class="container">
         <b-navbar-nav class="w-100 pr-5">
           <div class="row w-100">
