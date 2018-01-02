@@ -71,7 +71,7 @@
 
     <b-navbar id="navbar" sticky toggleable="md" type="light" variant="primary" v-b-scrollspy:app>
       <div class="container">
-        <b-navbar-nav class="w-100">
+        <b-navbar-nav class="w-100 pr-5">
           <div class="row w-100">
             <div v-for="content in contents" class="col text-center">
               <b-nav-item active-class="active" :href="`#${content.subtitle}`" v-scroll-to="{ el: `#${content.subtitle}` }">
