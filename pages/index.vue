@@ -392,7 +392,7 @@ $bar-height: 66px;
 .cvp-logo {
   height: 50px;
   position: fixed;
-  z-index: 2000;
+  z-index: 1030;
   top: 8px;
   right: 8px;
 }
