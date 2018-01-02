@@ -3,7 +3,7 @@ title: "Persönliche Eckdaten"
 subtitle: "Ich und andere über mich"
 ---
 
-Durch meine kommunikative und wache Persönlichkeit, gehe ich jede neue Herausforderung mit grossen Schritten entgegen.
+Durch meine kommunikative und aufgeweckter Persönlichkeit, trete ich jede neue Herausforderung mit vollem Tatendrang entgegen.
 
 <dl class="row">
   <dt class="col-3">Vorname</dt>
@@ -22,4 +22,4 @@ Durch meine kommunikative und wache Persönlichkeit, gehe ich jede neue Herausfo
   <dd class="col-9">ledig</dd>
 </dl>
 
-Mein Umfeld beschreibt mich als eine kommunikative, leistungs- und erfolgsorientierte Persönlichkeit, die über Organisationstalent, Erfahrung mit Teamarbeit und Leidenschaft für Herausforderungen verfügt.
+Mein Umfeld beschreibt mich als eine kommunikative, leistungs- und erfolgsorientierte Persönlichkeit, die über Organisationstalent, Zielstrebigkeit, Teamfähigkeit und Leidenschaft für Herausforderungen verfügt.
