@@ -22,24 +22,36 @@
           <div class="col-12 col-md-6">
             <div class="h-100">
               <div class="header-item" style="height: 33%">
-                <div class="text">
-                  <h4>gebildet</h4>
+                <div class="text text-muted">
+                  <div class="wrapper">
+                    rofessionell <br />
+                    <span class="text-primary">und</span> <br />
+                    qualifiziert
+                  </div>
                 </div>
                 <div class="title">
                   <h4>vielfältig</h4>
                 </div>
               </div>
               <div class="header-item" style="height: 33%">
-                <div class="text">
-                  <h4>vernetzt</h4>
+                <div class="text text-muted">
+                  <div class="wrapper">
+                    loyal <br />
+                    <span class="text-primary">und</span> <br />
+                    ehrlich
+                  </div>
                 </div>
                 <div class="title">
                   <h4>persönlich</h4>
                 </div>
               </div>
               <div class="header-item" style="height: 33%">
-                <div class="text">
-                  <h4>beliebt</h4>
+                <div class="text text-muted">
+                  <div class="wrapper">
+                    vernetzt <br />
+                    <span class="text-primary">und</span> <br />
+                    hilfsbereit
+                  </div>
                 </div>
                 <div class="title">
                   <h4>bürgernah</h4>
@@ -294,6 +306,11 @@ export default {
 }
 </script>
 
+<style lang="scss">
+@import "node_modules/bootstrap/scss/functions";
+@import '../bootstrap.scss';
+</style>
+
 <style lang="scss" scoped>
 
 @import "node_modules/bootstrap/scss/functions";
@@ -320,6 +337,10 @@ $bar-height: 66px;
 .item {
   border-bottom: 6px solid transparent;
   transition: border-bottom-color 0.5s;
+
+  &:hover {
+    border-bottom: 6px solid white;
+  }
 }
 
 .active > .item {
@@ -382,6 +403,14 @@ $bar-height: 66px;
   .text {
     width: 0px;
     transition: all 0.9s;
+    font-size: 1.2rem;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+
+    .wrapper {
+      width: 10vw;
+    }
   }
 
   &:hover {
@@ -391,7 +420,9 @@ $bar-height: 66px;
     }
 
     .text {
-      width: calc(100% - ( 150px + 30px ) ;
+      width: calc(100% - ( 150px + 30px );
+      height: 80px;
+      opacity: 1;
     }
   }
 }
