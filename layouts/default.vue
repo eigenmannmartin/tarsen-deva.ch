@@ -5,7 +5,7 @@
 </template>
 
 <style>
-#app {
+body {
   position: relative;
   overflow-y: scroll;
   max-height: 100vh;
