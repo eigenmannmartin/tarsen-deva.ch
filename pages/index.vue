@@ -12,6 +12,8 @@
       </div>
     </section>
     <section id="header">
+
+      <particles class="particles" />
       <div class="container py-2">
         <div class="row h-100">
           <div class="col-12 col-md-6">
@@ -29,7 +31,7 @@
               </div>
               <div class="header-item" style="height: 33%">
                 <div class="text">
-                  <h4>gebildet</h4>
+                  <h4>vernetzt</h4>
                 </div>
                 <div class="title">
                   <h4>persönlich</h4>
@@ -37,7 +39,7 @@
               </div>
               <div class="header-item" style="height: 33%">
                 <div class="text">
-                  <h4>gebildet</h4>
+                  <h4>beliebt</h4>
                 </div>
                 <div class="title">
                   <h4>bürgernah</h4>
@@ -248,9 +250,12 @@
 
 <script>
 import moment from 'moment'
+
+import particles from '~/components/particles'
 import contents from '~/content'
 
 export default {
+  components: { particles },
   methods: {
     sortCompare(a, b, key) {
       if (typeof a[key] === 'number' && typeof b[key] === 'number') {
@@ -300,7 +305,7 @@ $bar-height: 66px;
 
 #header .container {
   height: calc(100vh - #{$bar-height} - #{$label-height});
-  max-height: $header-max-height;
+  max-height: $header-max-height !important;
   overflow: hidden;
 }
 
@@ -349,6 +354,13 @@ $bar-height: 66px;
   margin-bottom: -2px;
 }
 
+.particles {
+  width: 100%;
+  height: calc(100vh - #{$bar-height} - #{$label-height});
+  max-height: $header-max-height;
+  position: absolute;
+}
+
 .header-item {
   display: flex;
   align-items: center;
@@ -383,4 +395,6 @@ $bar-height: 66px;
     }
   }
 }
+
+
 </style>
