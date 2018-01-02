@@ -343,10 +343,6 @@ $bar-height: 66px;
 .item {
   border-bottom: 6px solid transparent;
   transition: border-bottom-color 0.5s;
-
-  &:hover {
-    border-bottom: 6px solid white;
-  }
 }
 
 .active > .item {
