@@ -1,8 +1,12 @@
 ---
 title: "Migrationspolitik"
-subtitle: "Humanität und rechtsstaatlichkeit sind gleichermassen bedeutend"
+subtitle: "Humanität und Rechtsstaatlichkeit sind gleichermassen bedeutend"
 ---
 
-Deshalb heisst es: Bedrohten Menschen ist ohne Wenn und Aber Asyl zu gewähren. Kommt jemand zwar aus einer gewissen Perspektivlosigkeit, aber ohne Bedrohungssituation zu uns, gilt es klar zu machen, dass der richtige Weg einzig der Aufbau der Heimat ist. Auch das gehört zu einem humanitären Staat. Hier braucht es schnelle und dadurch faire Verfahren.
+In dieser ausserordentlichen Situation muss die Schweiz Wege finden, um Menschen aufzunehmen, welche an Leib und Seele bedroht werden. Dabei muss sie auch sicherstellen, dass Menschen die keinen Schutz benötigen, rasch zurückgeführt werden können.
+Erste und wichtigste Massnahme ist es, dass Dublin-System zu stärken und dafür zu sorgen, dass alle Europäischen Staaten sich am Dublin-Verfahren beteiligen. Nur so kann eine gerechte Verteilung der Flüchtlinge auf die einzelnen Staaten ermöglicht werden. 
 
-Der Grossteil der Menschen, die heute in die Schweiz kommen, sind nicht Flüchtlinge aus Kriegsgebieten, sondern Arbeiter aus EU-Staaten, mit denen wir über ein Freizügigkeitsabkommen verfügen. Die Wirtschaft ist auf diese Arbeitskräfte angewiesen. Gleichwohl gilt es, darauf zu achten, dass das Bevölkerungswachstum durch Zuwanderung nur so hoch ist, dass unsere Infrastrukturen und unsere Ressourcen nicht darunter leiden.
+Wer das Schengen/Dublin kündigen will, verursacht ein Asylchaos grösstem Ausmasses. Dadurch würde die Schweiz zum Magneten für alle Flüchtlinge werden.
+
+Der Grossteil der Menschen, die heute in die Schweiz kommen, sind nicht Flüchtlinge aus Kriegsgebieten, sondern Arbeiter aus EU-Staaten, mit denen wir über ein Freizügigkeitsabkommen verfügen. Die Wirtschaft ist auf diese Arbeitskräfte angewiesen. Gleichwohl gilt es darauf zu achten, dass das Bevölkerungswachstum durch Zuwanderungen nur so hoch ist, dass unsere Infrastrukturen und Ressourcen nicht darunter leiden.
+
