@@ -194,7 +194,6 @@
           </div>
 
           <div class="col text-right">
-
             <b class="text-white">Links</b><br />
             <a href="http://www.jcvp-sg.ch/" class="text-white">JCVP St.Gallen</a> <br />
 
@@ -203,7 +202,7 @@
         </div>
       </div>
     </footer>
-    <div class="container my-3">
+    <div class="container my-3 mb-5">
       <div class="row">
         <div class="col text-right">
           <b-link href="#" v-b-modal.about>Impressumg</b-link>
