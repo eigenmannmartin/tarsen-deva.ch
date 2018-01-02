@@ -196,7 +196,7 @@
           <div class="col text-right">
 
             <b class="text-white">Links</b><br />
-            <a href="http://www.csp-schweiz.ch/category/csp-kanton-st-gallen/" class="text-white">JCVP St.Gallen</a> <br />
+            <a href="http://www.jcvp-sg.ch/" class="text-white">JCVP St.Gallen</a> <br />
 
             <a href="http://www.csp-schweiz.ch/" class="text-white">CSP Schweiz</a>
           </div>
