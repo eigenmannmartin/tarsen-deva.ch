@@ -11,11 +11,41 @@
         </div>
       </div>
     </section>
-    <section id="header" class="bg-primary">
-      <div class="text-center">
-        <h2 class="text-white">
-           bürgernah, vielfältig und dienstleistungsorientiert
-        </h2>
+    <section id="header">
+      <div class="container py-2">
+        <div class="row h-100">
+          <div class="col-12 col-md-6">
+            <img src="~static/tarsen-freigestellt.png" class="w-100"/>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="h-100">
+              <div class="header-item" style="height: 33%">
+                <div class="text">
+                  <h4>gebildet</h4>
+                </div>
+                <div class="title">
+                  <h4>vielfältig</h4>
+                </div>
+              </div>
+              <div class="header-item" style="height: 33%">
+                <div class="text">
+                  <h4>gebildet</h4>
+                </div>
+                <div class="title">
+                  <h4>persönlich</h4>
+                </div>
+              </div>
+              <div class="header-item" style="height: 33%">
+                <div class="text">
+                  <h4>gebildet</h4>
+                </div>
+                <div class="title">
+                  <h4>bürgernah</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -254,22 +284,24 @@ export default {
         },
         show_details: { label: ' ' }
       }
-
-      // Stadtparlament 2020
-      // Kantonsraat 2020
     }
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+
+@import "node_modules/bootstrap/scss/functions";
 @import '../bootstrap.scss';
 
+$header-max-height: 663px;
 $label-height: 60px;
 $bar-height: 66px;
 
-#header {
+#header .container {
   height: calc(100vh - #{$bar-height} - #{$label-height});
+  max-height: $header-max-height;
+  overflow: hidden;
 }
 
 #label {
@@ -315,5 +347,40 @@ $bar-height: 66px;
 .icon {
   height: 100%;
   margin-bottom: -2px;
+}
+
+.header-item {
+  display: flex;
+  align-items: center;
+
+  .title {
+    color: white;
+    padding: 4px 8px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: theme-color("primary");
+    transition: all 0.9s;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+  }
+
+  .text {
+    width: 0px;
+    transition: all 0.9s;
+  }
+
+  &:hover {
+    .title {
+      padding-top: 50px;
+      padding-left: 30px;
+    }
+
+    .text {
+      width: calc(100% - ( 150px + 30px ) ;
+    }
+  }
 }
 </style>
