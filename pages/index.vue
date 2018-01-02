@@ -25,7 +25,7 @@
           <div class="col-12 col-md-6">
             <img src="~static/tarsen-freigestellt.png" class="w-100"/>
           </div>
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-6 h-100">
             <div class="h-100">
               <div class="header-item">
                 <div class="text text-muted">
@@ -322,6 +322,7 @@ export default {
 @import "node_modules/bootstrap/scss/functions";
 @import '../bootstrap.scss';
 
+$header-min-height: 300px;
 $header-max-height: 663px;
 $label-height: 60px;
 $bar-height: 66px;
@@ -329,6 +330,7 @@ $bar-height: 66px;
 #header .container {
   height: calc(100vh - #{$bar-height} - #{$label-height});
   max-height: $header-max-height !important;
+  min-height: $header-min-height !important;
   overflow: hidden;
 }
 
@@ -394,7 +396,8 @@ $bar-height: 66px;
 }
 
 .header-item {
-  height: calc(calc(100vh - #{$bar-height} - #{$label-height}) / 4);
+  height: calc(100% / 4);
+  min-height: calc(#{$header-min-height} / 4);
   padding: 0;
   margin: 0;
   display: flex;
