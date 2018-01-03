@@ -11,6 +11,6 @@ subtitle: "Politischer Werdegang und Engagement"
 
 <li><b class="text-muted text-monospace">2017 – 2018</b> <span class="ml-3"></span> Mitarbeit im Initativkomittee ,,Vollgeld-CH Initiative’’
 
-<li><b class="text-muted text-monospace">2017 – 2019</b> <span class="ml-3"></span> Mitarbeit im Initativkomittee ,,Tierverschungsverbot – CH Initaitve’’
+<li><b class="text-muted text-monospace">2017 – 2019</b> <span class="ml-3"></span> Mitarbeit im Initativkomittee ,,Tierversuchsverbotsinitiative – CH Initaitve’’
 
 </ul>
