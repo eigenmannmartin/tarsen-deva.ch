@@ -1,45 +1,48 @@
-import matter from 'gray-matter'
-import marked from 'marked'
+import matter from "gray-matter";
+import marked from "marked";
+
+const getPolitik = folder => {
+  const files = require.context("./politik", true, /.*\.md$/);
+
+  return files.keys().map(key => files(key));
+};
+
+const getEvents = folder => {
+  const files = require.context("./events", true, /.*\.md$/);
+
+  return files.keys().map(key => files(key));
+};
+
+const getProfile = folder => {
+  const files = require.context("./profile", true, /.*\.md$/);
+
+  return files.keys().map(key => files(key));
+};
 
 export default [
   {
-    title: 'Politik',
-    subtitle: 'Motivation',
-    icon: 'heartbeat',
-    type: 'TEXT',
-    sections: [
-      require('./politik/01-head.md'),
-      require('./politik/02-bildungspolitik.md'),
-      require('./politik/03-familienpolitik.md'),
-      require('./politik/04-migrationspolitik.md'),
-      require('./politik/05-aussenpolitik.md')
-    ]
+    title: "Politik",
+    subtitle: "Motivation",
+    icon: "heartbeat",
+    type: "TEXT",
+    sections: getPolitik()
       .map(matter)
       .map(e => ({ ...e, content: marked(e.content) }))
   },
   {
-    title: 'Agenda',
-    subtitle: 'Termine',
-    icon: 'globe',
-    type: 'AGENDA',
-    entries: [
-      require('./events/2018-01-05-neujahresbegruessung.md'),
-      require('./events/2018-04-14-delegiertenversammlung.md')
-    ].map(matter)
+    title: "Agenda",
+    subtitle: "Termine",
+    icon: "globe",
+    type: "AGENDA",
+    entries: getEvents().map(matter)
   },
   {
-    title: 'Über mich',
-    subtitle: 'Profil',
-    icon: 'user',
-    type: 'TEXT',
-    sections: [
-      require('./profile/01-head.md'),
-      require('./profile/02-persoenliche-eckdaten.md'),
-      require('./profile/03-politische-mandate.md'),
-      require('./profile/04-beruflicher-werdegang.md'),
-      require('./profile/05-ehrenamtliche-taetigkeiten.md')
-    ]
+    title: "Über mich",
+    subtitle: "Profil",
+    icon: "user",
+    type: "TEXT",
+    sections: getProfile()
       .map(matter)
       .map(e => ({ ...e, content: marked(e.content) }))
   }
-]
+];
