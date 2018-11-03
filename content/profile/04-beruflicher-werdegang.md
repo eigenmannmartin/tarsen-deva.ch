@@ -13,4 +13,6 @@ subtitle: "Ausbildung und Beruf"
 
 <li><b class="text-muted text-monospace">2016 – heute</b> <span style="margin-left: 7px;"></span> Bachelor Religionspädagoge mit Schwerpunkt Religionsunterricht Oberstufe</li>
 
+<li><b class="text-muted text-monospace">2017 – heute</b> <span style="margin-left: 7px;"></span> Jugendarbeiter Teilzeit bei der Pfarrei Arbon</li>
+
 </ul>
